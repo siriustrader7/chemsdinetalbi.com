@@ -913,9 +913,55 @@ html { scroll-behavior: smooth; }
 .ct-mail { display:inline-block; font-weight:700; font-size:16px; color:var(--notion-blue); text-decoration:none; word-break:break-all; border-bottom:1px solid transparent; transition: border-color .2s ease; }
 .ct-mail:hover { border-bottom-color: var(--notion-blue); }
 @media (max-width:620px){ .contact-grid{grid-template-columns:1fr;} }
+
+
+/* ============ Forced DARK theme ============ */
+:root{
+	--notion-bg:#0a0d14; --notion-bg-soft:#11141c; --notion-surface:#141823;
+	--notion-surface-hover:#1c2230; --notion-text:#f2f5fa;
+	--notion-text-soft:rgba(255,255,255,0.62); --notion-text-faint:rgba(255,255,255,0.4);
+	--notion-border:rgba(255,255,255,0.14); --notion-border-soft:rgba(255,255,255,0.08);
+	--notion-blue:#5aa2f0; --notion-blue-bg:rgba(90,162,240,0.10);
+	--notion-surface-hover:#1c2230;
+	--notion-shadow:0 1px 2px rgba(0,0,0,0.30),0 10px 30px rgba(0,0,0,0.45);
+}
+body{ background: var(--notion-bg); color: var(--notion-text); }
+table th{ background: var(--notion-bg-soft); }
+.notion-card, .notion-stat, .video-card, .contact-tile, .welcome-banner, .featured-portrait { background: var(--notion-surface); }
+
+/* ============ Crypto announcement bar ============ */
+.crypto-bar{ position:relative; overflow:hidden;
+	background: linear-gradient(110deg,#10131b,#3a1d6e,#1d6e57,#10131b); background-size:300% 300%;
+	animation: cbGradient 8s ease infinite; border-bottom:1px solid rgba(255,255,255,0.12); }
+.crypto-bar::after{ content:""; position:absolute; top:0; bottom:0; width:38%; left:-50%;
+	background:linear-gradient(90deg,transparent,rgba(255,255,255,0.18),transparent); animation:cbShine 4.5s linear infinite; }
+.cb-inner{ position:relative; z-index:2; max-width:var(--notion-page-width); margin:0 auto;
+	display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; padding:10px 18px; text-align:center; }
+.cb-rocket{ font-size:20px; display:inline-block; animation: cbFly 2.4s ease-in-out infinite; }
+.cb-text{ color:#fff; font-size:14px; letter-spacing:0.01em; }
+.cb-text strong{ color:#fff; font-weight:800; }
+.cb-cta{ display:inline-flex; align-items:center; gap:8px; text-decoration:none; font-weight:800; font-size:13px;
+	color:#06281d; background:#46e6a5; padding:7px 15px; border-radius:999px; letter-spacing:0.02em;
+	box-shadow:0 0 0 0 rgba(70,230,165,0.6); animation: cbPulse 2s infinite; transition: transform .2s ease; }
+.cb-cta:hover{ transform: translateY(-1px) scale(1.05); }
+.live-dot{ width:8px; height:8px; border-radius:50%; background:#e5394e; box-shadow:0 0 0 0 rgba(229,57,78,0.7); animation: dotPulse 1.3s infinite; }
+@media (max-width:620px){ .cb-text{ font-size:12.5px; } .cb-inner{ gap:10px; } }
+
+@keyframes cbGradient{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+@keyframes cbShine{0%{left:-50%}100%{left:130%}}
+@keyframes cbFly{0%,100%{transform:translateY(2px) rotate(-8deg)}50%{transform:translateY(-3px) rotate(6deg)}}
+@keyframes cbPulse{0%{box-shadow:0 0 0 0 rgba(70,230,165,0.6)}70%{box-shadow:0 0 0 10px rgba(70,230,165,0)}100%{box-shadow:0 0 0 0 rgba(70,230,165,0)}}
+@keyframes dotPulse{0%{box-shadow:0 0 0 0 rgba(229,57,78,0.7)}70%{box-shadow:0 0 0 6px rgba(229,57,78,0)}100%{box-shadow:0 0 0 0 rgba(229,57,78,0)}}
 </style>
 </head>
 <body>
+<div class="crypto-bar" id="cryptoBar">
+	<div class="cb-inner">
+		<span class="cb-rocket">🚀</span>
+		<span class="cb-text"><strong>I’m launching my own crypto TONIGHT on Pump.fun</strong> — live stream on Pump.fun. Don’t miss the launch!</span>
+		<a class="cb-cta" href="https://pump.fun" target="_blank" rel="noopener"><span class="live-dot"></span> Watch Live</a>
+	</div>
+</div>
 <header class="site-nav" id="siteNav">
 	<a class="brand" href="#top" aria-label="Chemsdine Talbi — accueil">
 		<svg class="logo-mark" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Logo CT">
