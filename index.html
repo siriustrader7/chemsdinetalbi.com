@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>HOLY PUMP — $JESUS Meme Coin</title>
+<style>
+  :root{
+    --pink:#ff3ca8;
+    --cyan:#21e6ff;
+    --purple:#7b2ff7;
+    --yellow:#ffe23d;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{height:100%;}
+  body{
+    font-family:"Trebuchet MS",Verdana,sans-serif;
+    background:#0b0220;
+    color:#fff;
+    overflow-x:hidden;
+    text-align:center;
+  }
+
+  /* ===== TOP MARQUEE / HEADER ===== */
+  .ticker{
+    position:fixed;top:0;left:0;width:100%;
+    background:linear-gradient(90deg,var(--pink),var(--purple),var(--cyan));
+    padding:10px 0;
+    font-weight:bold;
+    letter-spacing:2px;
+    white-space:nowrap;
+    overflow:hidden;
+    z-index:50;
+    box-shadow:0 0 25px var(--pink);
+  }
+  .ticker span{
+    display:inline-block;
+    padding-left:100%;
+    animation:scroll 14s linear infinite;
+    font-size:18px;
+    text-shadow:0 0 8px #000;
+  }
+  @keyframes scroll{0%{transform:translateX(0);}100%{transform:translateX(-100%);}}
+
+  .hero-title{
+    margin-top:70px;
+    padding:20px;
+  }
+  .hero-title h1{
+    font-size:clamp(28px,6vw,68px);
+    text-transform:uppercase;
+    line-height:1.05;
+    background:linear-gradient(90deg,var(--cyan),var(--pink),var(--yellow));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+    filter:drop-shadow(0 0 18px rgba(255,60,168,.8));
+    animation:glowpulse 2.2s ease-in-out infinite alternate;
+  }
+  .hero-title h2{
+    margin-top:12px;
+    font-size:clamp(16px,3vw,26px);
+    color:var(--yellow);
+    text-shadow:0 0 12px var(--pink);
+  }
+  @keyframes glowpulse{from{filter:drop-shadow(0 0 8px rgba(33,230,255,.6));}to{filter:drop-shadow(0 0 28px rgba(255,60,168,1));}}
+
+  /* ===== JESUS “GIF” (animated) ===== */
+  .stage{
+    position:relative;
+    width:100%;
+    max-width:1024px;
+    margin:20px auto;
+    overflow:hidden;
+    border-radius:18px;
+    border:3px solid var(--pink);
+    box-shadow:0 0 40px var(--purple);
+  }
+  .scene{
+    width:100%;
+    display:block;
+    animation:scenezoom 12s ease-in-out infinite alternate;
+  }
+  @keyframes scenezoom{from{transform:scale(1);}to{transform:scale(1.08);}}
+
+  /* floating walking jesus overlay using same image, masked to center */
+  .jesus{
+    position:absolute;
+    top:0;left:50%;
+    width:26%;
+    height:100%;
+    transform:translateX(-50%);
+    background-image:url('assets/jesus.jpeg');
+    background-size:1024px auto;
+    background-position:center -6px;
+    animation:walk 1.6s ease-in-out infinite, drift 9s ease-in-out infinite alternate;
+    pointer-events:none;
+    filter:drop-shadow(0 0 14px rgba(255,255,255,.5));
+  }
+  @keyframes walk{0%{transform:translateX(-50%) translateY(0) rotate(-1deg);}50%{transform:translateX(-50%) translateY(-10px) rotate(1deg);}100%{transform:translateX(-50%) translateY(0) rotate(-1deg);}}
+  @keyframes drift{from{margin-left:-30px;}to{margin-left:30px;}}
+
+  .halo{
+    position:absolute;
+    top:8%;left:50%;
+    width:90px;height:90px;
+    transform:translateX(-50%);
+    border-radius:50%;
+    background:radial-gradient(circle,rgba(255,226,61,.9),rgba(255,226,61,0) 70%);
+    animation:halo 2s ease-in-out infinite alternate;
+    pointer-events:none;
+  }
+  @keyframes halo{from{opacity:.4;transform:translateX(-50%) scale(.9);}to{opacity:1;transform:translateX(-50%) scale(1.2);}}
+
+  /* ===== CTA ===== */
+  .cta{margin:30px auto 60px;}
+  .pump-btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:18px 44px;
+    font-size:22px;
+    font-weight:bold;
+    text-transform:uppercase;
+    color:#0b0220;
+    background:linear-gradient(90deg,var(--yellow),var(--cyan));
+    border-radius:50px;
+    box-shadow:0 0 25px var(--cyan);
+    animation:bounce 1.4s ease-in-out infinite;
+  }
+  @keyframes bounce{0%,100%{transform:translateY(0);}50%{transform:translateY(-8px);}}
+  .contract{margin-top:18px;font-size:14px;color:#bda7ff;word-break:break-all;}
+
+  /* ===== MUSIC CONTROL ===== */
+  #musicBtn{
+    position:fixed;bottom:18px;right:18px;z-index:60;
+    background:var(--purple);
+    color:#fff;border:2px solid var(--cyan);
+    border-radius:50px;padding:12px 20px;
+    font-weight:bold;cursor:pointer;
+    box-shadow:0 0 20px var(--purple);
+  }
+  .palm{font-size:40px;}
+  footer{padding:30px;color:#7c6aa6;font-size:13px;}
+</style>
+</head>
+<body>
+
+  <div class="ticker">
+    <span>🚀 LAUNCH MEME COIN ON PUMP.FUN TODAY • $JESUS IS COMING • PRAY 'N' SPRAY • TO THE MOON 🌕 • LAUNCH MEME COIN ON PUMP.FUN TODAY 🚀</span>
+  </div>
+
+  <div class="hero-title">
+    <h1>Launch Meme Coin on Pump.fun Today</h1>
+    <h2>🙏 $JESUS • The Holy Pump of Vice City 🙏</h2>
+  </div>
+
+  <div class="stage">
+    <img class="scene" src="assets/jesus.jpeg" alt="Vice City Jesus" />
+    <div class="halo"></div>
+    <div class="jesus"></div>
+  </div>
+
+  <div class="cta">
+    <a class="pump-btn" href="https://pump.fun" target="_blank">Buy $JESUS on Pump.fun</a>
+    <div class="contract">CA: COMING_SOON_PASTE_YOUR_CONTRACT_HERE</div>
+    <div class="palm">🌴 🏝️ 🌴</div>
+  </div>
+
+  <audio id="bg" src="assets/music.mp3" loop autoplay></audio>
+  <button id="musicBtn">🔇 Music: OFF</button>
+
+  <footer>Made for the culture • Not financial advice • $JESUS © Vice City</footer>
+
+<script>
+  const audio=document.getElementById('bg');
+  const btn=document.getElementById('musicBtn');
+  function setLabel(){btn.textContent = audio.paused ? '🔇 Music: OFF' : '🔊 Music: ON';}
+  // Try autoplay; browsers usually block until interaction
+  audio.volume=0.6;
+  const tryPlay=()=>audio.play().then(setLabel).catch(()=>setLabel());
+  window.addEventListener('load',tryPlay);
+  // Start on first interaction anywhere
+  document.addEventListener('click',()=>{if(audio.paused){tryPlay();}},{once:true});
+  btn.addEventListener('click',(e)=>{e.stopPropagation(); if(audio.paused){audio.play();}else{audio.pause();} setLabel();});
+  audio.addEventListener('play',setLabel);
+  audio.addEventListener('pause',setLabel);
+  setLabel();
+</script>
+</body>
+</html>
